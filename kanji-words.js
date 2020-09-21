@@ -121,7 +121,6 @@ var idioms = {};
 var yomis = {};
 // execSync('iconv --from-code=euc-jp --to-code=utf8 mecab-naist-jdic-0.6.3b-20111013/naist-jdic.csv -o mecab-naist-jdic-0.6.3b-20111013/naist-jdic.utf8.csv');
 readEachLineSync('mecab-naist-jdic-0.6.3b-20111013/naist-jdic.utf8.csv', (line) => {
-  var included = true;
   arr = line.split(',');
   idiom = arr[0];
   cost = parseInt(arr[3]);
