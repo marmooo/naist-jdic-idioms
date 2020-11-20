@@ -34,7 +34,7 @@ const w8 = w8_.concat(w7);
 const w9 = w9_.concat(w8);
 const learnedKanjis = [w1, w1, w2, w3, w4, w5, w6, w7, w8, w9];
 const gradeByKanjis = [w1_, w1_, w2_, w3_, w4_, w5_, w6_, w7_, w8_, w9_];
-const threshold = 3999;
+const threshold = 99999999999999999999999;
 const filtering = true;
 
 const idiomLength = parseInt(args[0]);
@@ -144,7 +144,7 @@ readEachLineSync('mecab-naist-jdic-0.6.3b-20111013/naist-jdic.utf8.csv', (line) 
       }
       if (!filtered) {
         if (cost < threshold) {
-          if (level == 9) {
+          if (level == 10) {
             yomis[idiom] = yomi;  // 重複不許可
           }
           idioms[idiom] = cost;
@@ -177,7 +177,7 @@ idioms = arr.reduce(function(map, obj) {
 }, {});
 
 fs.writeFileSync('dist/' + level + '.lst', Object.keys(idioms).join('\n'));
-if (level == 9) {
+if (level == 10) {
   fs.writeFileSync('dist/yomi.json', JSON.stringify(yomis));
 }
 
